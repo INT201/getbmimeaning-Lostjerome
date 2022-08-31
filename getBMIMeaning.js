@@ -5,15 +5,20 @@ function calculateBMI(weight, height) {
 }
 function getBMIMeaning(weight, height) {
   let bmi = calculateBMI(weight, height);
+  let meaning = "";
   switch (bmi) {
     case bmi < 18.5:
-      return "Underweight";
+      meaning = "Underweight";
+      break;
     case 18.5 >= bmi <= 25:
-      return "Normal weight";
+      meaning = "Normal weight";
+      break;
     case bmi > 25:
-      return "Overweight";
+      meaning = "Overweight";
+      break;
     default:
-      return "Error";
+      meaning = "Error";
   }
+  return meaning;
 }
 module.exports = getBMIMeaning;
